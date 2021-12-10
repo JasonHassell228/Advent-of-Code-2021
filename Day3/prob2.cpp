@@ -42,7 +42,6 @@ string mostCommonBitsOxy(string lines[], int size, int idx, int flag) {
             newSz++;
         }
     }
-
     if (newSz == 1) {
         return newLines[0];
     } else if (newSz > 1) {
@@ -51,18 +50,15 @@ string mostCommonBitsOxy(string lines[], int size, int idx, int flag) {
     } else {
         cout << "ERROR no options left?" << endl;
         return "err";
-        // return mostCommonBitsOxy(lines, size, ++idx, flag);
     }
 }
 
 int main() {
     ifstream fs;
     string line;
-    // string filename = "testin2";
     string filename = "input1";
     int size = 0;
     int i = 0;
-
     fs.open(filename);
     while (getline(fs, line)) {
         size++;
@@ -74,8 +70,6 @@ int main() {
         lines[i] = line;
         i++;
     }
-
-    // cout << "Result: " + mostCommonBitsOxy(lines, size, 0) + ", " + mostCommonBitsC02(lines, size, 0); // start @ 0
     cout << "Result: " + mostCommonBitsOxy(lines, size, 0, 0) + ", " + mostCommonBitsOxy(lines, size, 0, 1); // start @ 0
     return 0;
 }
